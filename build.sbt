@@ -1,9 +1,16 @@
 name := """scala-test"""
-organization := "com.example"
+
+version := "1.0-SNAPSHOT"
 
 herokuAppName in Compile := "scala-test-kr"
 
-version := "1.0-SNAPSHOT"
+herokuProcessTypes in Compile := Map(
+  "web" -> "target/universal/stage/bin/scala-test -Dhttp.port=$PORT"
+)
+
+herokuIncludePaths in Compile := Seq(
+  "app", "conf/routes", "public/javascripts"
+)
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
