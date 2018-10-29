@@ -1,5 +1,7 @@
-name := """play-scala-seed"""
+name := """scala-test"""
 organization := "com.example"
+
+herokuAppName in Compile := "scala-test-kr"
 
 version := "1.0-SNAPSHOT"
 
