@@ -1,37 +1,57 @@
-# Play Hello World Web Tutorial for Java
+# play-scala-starter-example
 
-To follow the steps in this tutorial, you will need the correct version of Java and a build tool. You can build Play projects with sbt or Gradle. Since sbt works particularly well with Play, we recommend trying this example with sbt. The template requires:
+[<img src="https://img.shields.io/travis/playframework/play-scala-starter-example.svg"/>](https://travis-ci.org/playframework/play-scala-starter-example)
 
-* Java Software Developer's Kit (SE) 1.8 or higher
-* sbt 0.13.15 or higher (we recommend 1.2.3)
+This is a starter application that shows how Play works.  Please see the documentation at <https://www.playframework.com/documentation/latest/Home> for more details.
 
-To check your Java version, enter the following in a command window:
+## Running
 
-```bash
-java -version
-```
-
-To check your sbt version, enter the following in a command window:
+Run this using [sbt](http://www.scala-sbt.org/).  If you downloaded this project from <http://www.playframework.com/download> then you'll find a prepackaged version of sbt in the project directory:
 
 ```bash
-sbt sbt-version
+sbt run
 ```
 
-If you do not have the required versions, follow these links to obtain them:
+And then go to <http://localhost:9000> to see the running web application.
 
-* [Java SE](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* [sbt](http://www.scala-sbt.org/download.html)
+There are several demonstration files available in this template.
 
-## Build and run the project
+## Controllers
 
-This example Play project was created from a seed template. It includes all Play components and an Akka HTTP server. The project is also configured with filters for Cross-Site Request Forgery (CSRF) protection and security headers.
+- `HomeController.scala`:
 
-To build and run the project:
+  Shows how to handle simple HTTP requests.
 
-1. Use a command window to change into the example project directory, for example: `cd play-scala-hello-world-web`
+- `AsyncController.scala`:
 
-2. Build the project. Enter: `sbt run`. The project builds and starts the embedded HTTP server. Since this downloads libraries and dependencies, the amount of time required depends partly on your connection's speed.
+  Shows how to do asynchronous programming when handling a request.
 
-3. After the message `Server started, ...` displays, enter the following URL in a browser: <http://localhost:9000>
+- `CountController.scala`:
 
-The Play application responds: `Welcome to the Hello World Tutorial!`
+  Shows how to inject a component into a controller and use the component when
+  handling requests.
+
+## Components
+
+- `Module.scala`:
+
+  Shows how to use Guice to bind all the components needed by your application.
+
+- `Counter.scala`:
+
+  An example of a component that contains state, in this case a simple counter.
+
+- `ApplicationTimer.scala`:
+
+  An example of a component that starts when the application starts and stops
+  when the application stops.
+
+## Filters
+
+- `Filters.scala`:
+
+  Creates the list of HTTP filters used by your application.
+
+- `ExampleFilter.scala`:
+
+  A simple filter that adds a header to every response.
