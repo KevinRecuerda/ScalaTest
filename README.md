@@ -1,4 +1,4 @@
-![Heroku](https://heroku-badge.herokuapp.com/?app=play-java-test-kr)
+![Heroku](https://heroku-badge.herokuapp.com/?app=scala-test-kr)
 
 
 # play-scala-starter-example
